@@ -1,15 +1,17 @@
 <template>
   <div>
-    Home
+    <listar-clientes :listClientes="listClientes"/>
   </div>
 </template>
 
 <script>
+import ListarClientes from '../Tables/ListarClientes.vue'
 export default {
   name: 'Home',
-  props: {
+  props: {},
+  components:{
+    ListarClientes
   },
-  components:{},
   mixins:[],
   directives:{},
   data(){
@@ -40,7 +42,7 @@ export default {
       }
       this.axios.get("/clientes", header)
       .then((response) => {
-        at.listClientes = response.data
+        at.listClientes = response.data[0]
       })
       .catch((error) => {
         console.log(error)

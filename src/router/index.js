@@ -1,4 +1,4 @@
-import Home from '../components/Views/Home.vue'
+import ListarClientes from '../components/Views/Cliente/ListarClientes.vue'
 import Login from '../components/Views/Login.vue'
 
 const routes = [
@@ -14,8 +14,8 @@ const routes = [
     },
     {
       path: '/home',
-      name: 'Home',
-      component: Home
+      name: 'ListarClientes',
+      component: ListarClientes
     }
   ]
 
