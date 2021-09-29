@@ -14,6 +14,7 @@ export default {
   directives:{},
   data(){
     return {
+      listClientes: []
     }
   },
   computed:{},
@@ -22,17 +23,24 @@ export default {
   created(){},
   beforeMount(){},
   mounted(){
-    this.teste()
+    this.listarClientes()
   },
   beforeUpdate(){},
   updated(){},
   beforeDestroy(){},
   destroyed(){},
   methods:{
-    teste(){
-      this.axios.get("http://localhost:9080")
+    listarClientes(){
+      let at = this
+      let header = {
+        headers: {
+          "content-type": "application/json",
+          "x-access-token": this.$cookies.get('token')
+        }
+      }
+      this.axios.get("/clientes", header)
       .then((response) => {
-        console.log(response.data)
+        at.listClientes = response.data
       })
       .catch((error) => {
         console.log(error)
