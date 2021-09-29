@@ -1,10 +1,16 @@
-import Home from '../components/Home.vue'
+import Home from '../components/Views/Home.vue'
+import Login from '../components/Views/Login.vue'
 
 const routes = [
     {
       path: '/',
-      component: Home,
-      redirect: 'home'
+      component: Login,
+      redirect: 'login'
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     },
     {
       path: '/home',
