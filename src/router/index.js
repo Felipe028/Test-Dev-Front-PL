@@ -1,5 +1,6 @@
 import ListarClientes from '../components/Views/Cliente/ListarClientes.vue'
-import CadastrarClientes from '../components/Views/Cliente/CadastrarClientes'
+import CadastrarClientes from '../components/Views/Cliente/CadastrarClientes.vue'
+import AtualizarClientes from '../components/Views/Cliente/AtualizarClientes.vue'
 import Login from '../components/Views/Login.vue'
 
 const routes = [
@@ -22,6 +23,11 @@ const routes = [
       path: '/cadastrar',
       name: 'Cadastrar Clientes',
       component: CadastrarClientes
+    },
+    {
+      path: '/atualizar/:id',
+      name: 'Atualizar Clientes',
+      component: AtualizarClientes
     }
   ]
 

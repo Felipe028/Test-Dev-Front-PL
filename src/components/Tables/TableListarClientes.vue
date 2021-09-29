@@ -9,6 +9,7 @@
                 <th>Mobile</th>
                 <th>Criado em</th>
                 <th>Atualizado em</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,10 @@
                 <td>{{item.mobile}}</td>
                 <td>{{moment(item.createdAt).add(4, 'hour').format('DD/MM/YYYY - HH:mm:ss') }}</td>
                 <td>{{moment(item.updatedAt).add(4, 'hour').format('DD/MM/YYYY - HH:mm:ss') }}</td>
+                <td>
+                    <button type="button" @click="action(item, 'Atualizar')">Atualizar</button>
+                    <button type="button">Excluir</button>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -56,6 +61,13 @@ export default {
         moment(data) {
             return moment(data);
         },
+
+
+        action(data, action){
+            if(action == "Atualizar"){
+                this.$router.push(`/atualizar/${data.id}`)
+            }
+        }
     },
     watch:{},
 }

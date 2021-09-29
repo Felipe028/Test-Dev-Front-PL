@@ -54,7 +54,7 @@ export default {
 
 
     cadastrar(){
-      // let at = this
+      let at = this
       let formData = {
           name: this.nome,
           email: this.email,            
@@ -71,6 +71,9 @@ export default {
       this.axios.post("/clientes", formData, header)
       .then((response) => {
         console.log(response)
+        setTimeout(()=> {
+          at.$router.push("/home")
+        }, 3000)
       })
       .catch((error) => {
         console.log(error)
