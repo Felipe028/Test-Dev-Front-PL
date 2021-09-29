@@ -1,16 +1,16 @@
 <template>
   <div>
-    <listar-clientes :listClientes="listClientes"/>
+    <table-listar-clientes :listClientes="listClientes"/>
   </div>
 </template>
 
 <script>
-import ListarClientes from '../../Tables/ListarClientes.vue'
+import TableListarClientes from '../../Tables/TableListarClientes.vue'
 export default {
-  name: 'Listar-Clientes',
+  name: 'listar-clientes',
   props: {},
   components:{
-    ListarClientes
+    TableListarClientes
   },
   mixins:[],
   directives:{},

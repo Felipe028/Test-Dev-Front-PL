@@ -28,7 +28,7 @@
 <script>
 import moment from 'moment'
 export default {
-    name: 'listar-clientes',
+    name: 'table-listar-clientes',
     props: {
         listClientes:{
             // type: Object,

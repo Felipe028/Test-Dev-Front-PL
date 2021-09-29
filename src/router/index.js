@@ -1,4 +1,5 @@
 import ListarClientes from '../components/Views/Cliente/ListarClientes.vue'
+import CadastrarClientes from '../components/Views/Cliente/CadastrarClientes'
 import Login from '../components/Views/Login.vue'
 
 const routes = [
@@ -14,8 +15,13 @@ const routes = [
     },
     {
       path: '/home',
-      name: 'ListarClientes',
+      name: 'Listar Clientes',
       component: ListarClientes
+    },
+    {
+      path: '/cadastrar',
+      name: 'Cadastrar Clientes',
+      component: CadastrarClientes
     }
   ]
 
