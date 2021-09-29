@@ -22,7 +22,7 @@
                 <td>{{moment(item.updatedAt).add(4, 'hour').format('DD/MM/YYYY - HH:mm:ss') }}</td>
                 <td>
                     <button type="button" @click="action(item, 'Atualizar')">Atualizar</button>
-                    <button type="button">Excluir</button>
+                    <button type="button" @click="excluirCliente(item.id)">Excluir</button>
                 </td>
             </tr>
         </tbody>
@@ -67,6 +67,11 @@ export default {
             if(action == "Atualizar"){
                 this.$router.push(`/atualizar/${data.id}`)
             }
+        },
+
+
+        excluirCliente(idCliente){
+            this.$root.$emit('excluirCliente', idCliente)
         }
     },
     watch:{},

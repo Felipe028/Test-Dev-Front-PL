@@ -26,6 +26,10 @@ export default {
   beforeMount(){},
   mounted(){
     this.listarClientes()
+
+    this.$root.$on('excluirCliente', (idCliente) => {
+      this.excluirCliente(idCliente)
+    })
   },
   beforeUpdate(){},
   updated(){},
@@ -46,6 +50,25 @@ export default {
       })
       .catch((error) => {
         console.log(error)
+      })
+    },
+
+
+    excluirCliente(idCliente){
+      let at = this
+      let header = {
+          headers: {
+          "content-type": "application/json",
+          "x-access-token": this.$cookies.get('token')
+          }
+      }
+      this.axios.delete(`/clientes/${idCliente}`, header)
+      .then((response) => {
+          at.listClientes = response.data[0]
+          at.listarClientes()
+      })
+      .catch((error) => {
+          console.log(error)
       })
     }
   },

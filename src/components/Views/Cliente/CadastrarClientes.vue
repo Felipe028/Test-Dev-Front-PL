@@ -13,7 +13,7 @@
       <label>Mobile</label>
       <input type="number" v-model="mobile">
     </div>
-    <button type="submit" :disabled="checkForm()">Submit</button>
+    <button type="submit" :disabled="true">Submit</button>
   </form>
 </div>
 </template>
