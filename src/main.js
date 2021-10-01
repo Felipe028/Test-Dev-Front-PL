@@ -6,11 +6,13 @@ import routes from "./router"
 import Axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueCookies from 'vue-cookies'
+import VueTheMask from 'vue-the-mask'
 
 
 Vue.use(VueRouter)
 Vue.use(VueAxios, Axios)
 Vue.use(VueCookies)
+Vue.use(VueTheMask)
 
 Vue.config.productionTip = false
 Axios.defaults.baseURL = process.env.VUE_APP_URL_TEST
