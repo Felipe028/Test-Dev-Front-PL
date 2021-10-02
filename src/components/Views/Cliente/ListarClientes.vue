@@ -69,6 +69,11 @@ export default {
   destroyed(){},
   methods:{
     listarClientes(){
+      let a = 27
+      a = a % 2
+      console.log(a)
+
+
       let at = this
       at.isLoading = true
       let header = {
